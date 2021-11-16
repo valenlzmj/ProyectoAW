@@ -1,0 +1,41 @@
+@import './media';
+
+@mixin flex($justify, $align, $direction) {
+	display: flex;
+	justify-content: $justify;
+	align-items: $align;
+	flex-direction: $direction;
+}
+
+.page-container{
+	display: flex;
+	flex-direction: column;
+	min-width: 100vh;
+}
+
+.content-wrap{
+	flex:1;
+}
+
+@font-face {
+	font-family: 'BarlowCondensed';
+	src: url('./fonts/BarlowCondensed-Light.otf');
+	font-style: normal;
+}
+
+body {
+	font-family: 'Abel', sans-serif;
+	min-height: 100%;
+	overflow-x: hidden;
+}
+
+@mixin animate($animation,$duration,$method,$times){
+    animation: $animation $duration $method $times;
+}
+
+@mixin keyframes($name){
+    @keyframes #{$name}{
+        @content;
+    }
+}
+
